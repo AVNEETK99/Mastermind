@@ -1,4 +1,3 @@
-#https://techvidvan.com/tutorials/python-mastermind-game/
 import tkinter as tk
 from tkinter import *
 import random
@@ -22,7 +21,7 @@ def check():
             correct.set(3)
         elif(cnt==4):
             n=0
-            tkinter.messagebox.showinfo("TechVidvan Mastermind Game","Congratulations, you have guessed it correct!")
+            tkinter.messagebox.showinfo("Mastermind Game","Congratulations, you have guessed it correct!")
             return
         chances-=1
         n.set(chances)
@@ -34,7 +33,7 @@ def check():
         if(chances<=0):
             l=['red','blue','green','yellow']
             ans=l[answer[0]-1]+","+l[answer[1]-1]+","+l[answer[2]-1]+","+l[answer[3]-1]
-            tkinter.messagebox.showinfo("TechVidvan MastermindGame","The correct answer is "+ans+ ".Better luck next time!")
+            tkinter.messagebox.showinfo("MastermindGame","The correct answer is "+ans+ ".Better luck next time!")
             return
         n.set(chances)
 
@@ -45,7 +44,7 @@ def startGame():
     
     global n, answer,ch1,ch2,ch3,ch4,correct
     wn = Tk() 
-    wn.title("TechVidvan Mastermind Game")
+    wn.title("Mastermind Game")
     wn.geometry('700x500')
     wn.config(bg='SlateGray1')
     n =IntVar(wn)
@@ -60,7 +59,6 @@ def startGame():
     for i in range(0,4):
         answer.append(random.randint(1,4))
     print(answer)
-    #Getting the input of word from the user
     Label(wn, text='Please make your choice',bg='SlateGray1',font=('calibre',10,'normal'), anchor="e", 
           justify=LEFT).grid(row=3,column=1,pady= 20) 
 
@@ -115,17 +113,15 @@ def startGame():
        command=check).grid(row=11,column=3) 
 
 
-
-    #Runs the window till it is closed by the user
     wn.mainloop()
 #Creating the window 
 wn = Tk() 
-wn.title("TechVidvan Mastermind Game")
+wn.title("Mastermind Game")
 wn.geometry('500x300')
 wn.config(bg='SlateGray1')
 
 answer = []
-#Creating the variables to get the word and set the correct word
+
 n =IntVar(wn)
 correct=IntVar(wn)
 n.set(5)
